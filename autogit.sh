@@ -1,6 +1,6 @@
 git add -A
-git commit -m "FastAPI -> ok | Postman installed | requirements.txt -> add | extra dependencies -> ok"
+git commit -m "problems with installing redis_om | inventory folder -> add"
 git push 
 git status
 
-# next step: Redis CLoud (5:48)
+# next step: Products CRUD (10:33)
