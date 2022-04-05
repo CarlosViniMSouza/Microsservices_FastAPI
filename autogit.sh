@@ -1,5 +1,5 @@
 git add -A
-git commit -m "problems with installing redis_om | inventory folder -> add"
+git commit -m "problems with CORSMiddleware -> fixed"
 git push 
 git status
 
