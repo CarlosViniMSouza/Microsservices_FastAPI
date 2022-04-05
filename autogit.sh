@@ -1,5 +1,5 @@
 git add -A
-git commit -m "problems with CORSMiddleware -> fixed"
+git commit -m "Products CRUD (part1) -> add"
 git push 
 git status
 

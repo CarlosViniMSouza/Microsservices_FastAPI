@@ -1,3 +1,4 @@
+from itertools import product
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from redis_om import get_redis_connection, HashModel
@@ -28,11 +29,32 @@ class Product(HashModel):
         database = redis
 
 
+def format(pk: str):
+    product = Product.get(pk)
+
+    return {
+        'id': product.pk,
+        'name': product.name,
+        'price': product.price,
+        'quantity': product.quantity
+    }
+
+
 @app.get("/")
 async def root():
-    return {"data": "message"}
+    return [format(pk) for pk in Product.all_pks()]
 
 
 @app.get("/products/all")
 async def allProducts():
     return Product.all_pks()
+
+
+@app.get("/products/{pk}")
+async def getProduct(pk: str):
+    return Product.get(pk)
+
+
+@app.post("/products")
+def createProduct(product: Product):
+    return product.save()
