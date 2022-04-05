@@ -12,6 +12,7 @@ app.add_middleware(
     allow_headers=['*']
 )
 
+# This should be a different DB
 redis = get_redis_connection(
     host="redis-*****.c239.us-east-1-2.ec2.cloud.redislabs.com",
     port="*****",
@@ -46,7 +47,7 @@ async def root():
 
 
 @app.get("/products/all")
-async def allProducts():
+async def getAllProducts():
     return Product.all_pks()
 
 
@@ -58,3 +59,8 @@ async def getProduct(pk: str):
 @app.post("/products")
 def createProduct(product: Product):
     return product.save()
+
+
+@app.post("/products/{pk}")
+def createProduct(pk: str):
+    return product.delete(pk)

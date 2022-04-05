@@ -1,5 +1,5 @@
 git add -A
-git commit -m "Products CRUD (part1) -> add"
+git commit -m "Products CRUD (part2) -> add | inventory folder -> concluded"
 git push 
 git status
 
