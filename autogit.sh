@@ -1,6 +1,6 @@
 git add -A
-git commit -m "Products CRUD (part2) -> add | inventory folder -> concluded"
+git commit -m "payment folder -> concluded | Because of package hiredis (status: failed building) -> the project is suspended"
 git push 
 git status
 
-# next step: Products CRUD (10:33)
+# next step: Redis STREAM (37:27)

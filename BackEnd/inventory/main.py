@@ -12,7 +12,7 @@ app.add_middleware(
     allow_headers=['*']
 )
 
-# This should be a different DB
+
 redis = get_redis_connection(
     host="redis-*****.c239.us-east-1-2.ec2.cloud.redislabs.com",
     port="*****",
